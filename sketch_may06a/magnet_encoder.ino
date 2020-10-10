@@ -1,7 +1,7 @@
 #define USE_USBCON
 #include <ros.h>
 #include <Arduino.h>
-#include <vehicle_control/as5047Msg.h>
+#include <dualarm_sensor_msgs/as5047Msg.h>
 #include <SPI.h>
 
 const int CS[] = {2,3,4,5};
@@ -20,7 +20,7 @@ const int size_of_stack = 7;
 long stack[num_data][size_of_stack];
 
 ros::NodeHandle nh;
-vehicle_control::as5047Msg enc_data;
+dualarm_sensor_msgs::as5047Msg enc_data;
 ros::Publisher enc_chatter("magEnc",&enc_data);
 
 void setup() {
